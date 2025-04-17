@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto nel mio sito AWS!</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonianze">Testimonianze</a></li>
+            <li><a href="#contattami">Contattami</a></li>
+        </ul>
+    </nav>
+
+    <!-- Video background -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="nuvole.mp4" type="video/mp4">
+        Il tuo browser non supporta il video.
+    </video>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Benvenuto nel mio primo sito su AWS S3!</h1>
+        <img src="logo.png" alt="La mia foto" style="width: 20%; height: auto;" />
+        <p>Questo è il mio primo sito statico, ospitato su Amazon Web Services.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-items">
+            <div class="card">
+                <h3>Progetto AWS</h3>
+                <p>questo sito è il mio primo progetto.</p>
+            </div>
+            <div class="card">
+                <h3>Progetto 2</h3>
+                <p>coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonianze Section -->
+    <section id="testimonianze">
+        <h2>Testimonianze</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p>"Diego ha fatto un lavoro fantastico! La sua attenzione ai dettagli è incredibile."</p>
+                <p><strong>Marco Rossi</strong>, CEO di TFT</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"La collaborazione con Diego è stata un piacere. Ha sempre rispettato le scadenze."</p>
+                <p><strong>Lucia Bianchi</strong>, Project Manager</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contattami Section -->
+    <section id="contattami">
+        <h2>Contattami</h2>
+        <form action="mailto:tuoemail@dominio.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Messaggio:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Invia Messaggio</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Diego Servadio. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // Funzione che attiva la visibilità degli elementi durante lo scroll
+        const sections = document.querySelectorAll('section, .card');
+
+        function checkVisibility() {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility();
+    </script>
+</body>
+</html>
